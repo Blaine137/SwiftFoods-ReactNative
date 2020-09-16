@@ -1,13 +1,21 @@
-import React from 'react';
-import {View, Text} from 'react-native';
+import React, { Component } from 'react';
+import {ScrollView, Text} from 'react-native';
 
-const Home = props => {
+class Home extends Component {
 
-    return(
-        <View>
-            <Text>Home</Text>
-        </View>
-    );
+    static navigationOptions = {
+        title: 'Home'
+    };
+
+    render(){
+
+        return(
+            <ScrollView>
+                <Text>Home page</Text>
+            </ScrollView>
+        );
+
+    }
 
 };
 
