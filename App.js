@@ -5,18 +5,9 @@ import Layout from './components/Layout/Layout';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Layout/>
+    <View style={{flex: 1}} >
+      <Layout />
       <StatusBar style="auto" />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
