@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
 import {View, Text} from 'react-native';
 
-class About extends Component {
-
-    static navigationOptions = {
-        title: 'About'
-    };
-
-    render(){
+const About = props => {
 
         return(
             <View>
@@ -15,8 +9,10 @@ class About extends Component {
             </View>
         );
 
-    }
-
 };
+
+About['navigationOptions'] = screenProps => ({
+    title: 'About'
+});
 
 export default About;

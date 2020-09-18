@@ -6,6 +6,7 @@ import { createStackNavigator, createDrawerNavigator, DrawerItems } from 'react-
 import { Icon } from 'react-native-elements';
 import SafeAreaView from 'react-native-safe-area-view';
 import ExpoStatusBar from 'expo-status-bar/build/ExpoStatusBar';
+import SubscribeForm from '../SubscribeForm/SubscribeForm';
 
 const HomeNavigator = createStackNavigator(
     {
@@ -13,6 +14,7 @@ const HomeNavigator = createStackNavigator(
     },
     {
         navigationOptions: ({navigation}) => ({
+            title: 'Subscribe',
             headerStyle: {
                 backgroundColor: '#222A68'
             },
@@ -27,6 +29,23 @@ const HomeNavigator = createStackNavigator(
 const AboutNavigator = createStackNavigator(
     {
         About: { screen: About }
+    },
+    {
+        navigationOptions: ({navigation}) => ({
+            headerStyle: {
+                backgroundColor: '#222A68'
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+                color: '#fff'
+            }
+        })
+    }
+);
+
+const SubscribeNavigator = createStackNavigator(
+    {
+        Subscribe: { screen: SubscribeForm }
     },
     {
         navigationOptions: ({navigation}) => ({
@@ -64,6 +83,9 @@ const MainNavigator = createDrawerNavigator(
     {
         Home: {
           screen: HomeNavigator
+        },
+        Subscribe: {
+            screen: SubscribeNavigator
         },
         About: {
            screen: AboutNavigator
