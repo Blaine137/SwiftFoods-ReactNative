@@ -38,40 +38,52 @@ class SubscribeForm extends Component{
                 <TextInput
                 style={styles.fName}
                 placeholder="Enter your first name"
-                style={styles.firstInput}/>
+                style={styles.firstInput}
+                onChangeText={value => this.setState({fName: value})}/>
                 <TextInput
                 placeholder="Enter your last name"
-                style={styles.input}/>
+                style={styles.input}
+                onChangeText={value => this.setState({lName: value})}/>
                 <TextInput
                 placeholder="Enter your email"
-                style={styles.input}/>
+                style={styles.input}
+                onChangeText={value => this.setState({email: value})}/>
                 <TextInput
                 placeholder="Enter your address"
-                style={styles.input}/>
+                style={styles.input}
+                onChangeText={value => this.setState({address: value})}/>
                 <TextInput
                 placeholder="Enter your city"
-                style={styles.input}/>
+                style={styles.input}
+                onChangeText={value => this.setState({city: value})}/>
                 <TextInput
                 placeholder="Enter your state"
-                style={styles.input}/>
+                style={styles.input}
+                onChangeText={value => this.setState({state: value})}/>
                 <TextInput
                 placeholder="Enter your zipcode"
-                style={styles.input}/>
+                style={styles.input}
+                onChangeText={value => this.setState({zipcode: value})}/>
                 <TextInput
                 placeholder="Enter how many months"
-                style={styles.input}/>
+                style={styles.input}
+                onChangeText={value => this.setState({months: value})}/>
                 <TextInput
                 placeholder="Enter your card type"
-                style={styles.input}/>
+                style={styles.input}
+                onChangeText={value => this.setState({cardType: value})}/>
                 <TextInput
                 placeholder="Enter your card number"
-                style={styles.input}/>
+                style={styles.input}
+                onChangeText={value => this.setState({cardNum: value})}/>
                 <TextInput
                 placeholder="Enter your card's expiration date"
-                style={styles.input}/>
+                style={styles.input}
+                onChangeText={value => this.setState({cardExp: value})}/>
                 <TextInput
                 placeholder="Enter your card's security number"
-                style={styles.input}/>
+                style={styles.input}
+                onChangeText={value => this.setState({cardSec: value})}/>
                 <Button style={styles.submit} title="Submit" 
                     buttonStyle={{
                         backgroundColor: '#E2ADF2'
@@ -97,7 +109,9 @@ class SubscribeForm extends Component{
                             color='#5637DD'
                             title='Close'
                             style={styles.modalButton}/>
-                            <Text>Testing modal</Text>
+                            <Text>Hello {this.state.fName}, Thank you for subscribing to Swift Foods! 
+                            We will be sending you meals to {this.state.address} {this.state.city}, {this.state.state} 
+                            {this.state.zipcode} starting next week</Text>
                         </View>
                     </Modal>
             </ScrollView>
