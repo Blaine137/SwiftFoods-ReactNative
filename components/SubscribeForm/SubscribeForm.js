@@ -108,8 +108,11 @@ class SubscribeForm extends Component{
                             }}
                             color='#5637DD'
                             title='Close'
-                            style={styles.modalButton}/>
-                            <Text>Hello {this.state.fName}, Thank you for subscribing to Swift Foods! 
+                            style={styles.modalButton}
+                            buttonStyle={{
+                                backgroundColor: '#574AE2'
+                            }}/>
+                            <Text style={styles.modalText}>Hello {this.state.fName}, Thank you for subscribing to Swift Foods! 
                             We will be sending you meals to {this.state.address} {this.state.city}, {this.state.state} 
                             {this.state.zipcode} starting next week</Text>
                         </View>
@@ -166,9 +169,14 @@ const styles = StyleSheet.create({
     modal: { 
         justifyContent: 'center',
         margin: 20,
-        backgroundColor: 'red'
+        height: 500,
+
     },
     modalButton: {
+        marginTop: 48
+    },
+    modalText: {
+        fontSize: 24,
         marginTop: 48
     }
 });
