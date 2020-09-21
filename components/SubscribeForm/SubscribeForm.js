@@ -101,7 +101,7 @@ class SubscribeForm extends Component{
                         onRequestClose={() => {
                             this.toggleModal()
                         }}>
-                        <View style={{height: 250}}>
+                        <View style={styles.modal}>
                         <Button
                             onPress={() => {
                                 this.toggleModal();
@@ -168,9 +168,7 @@ const styles = StyleSheet.create({
     },
     modal: { 
         justifyContent: 'center',
-        margin: 20,
-        height: 500,
-
+        margin: 20
     },
     modalButton: {
         marginTop: 48
