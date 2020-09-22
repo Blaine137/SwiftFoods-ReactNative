@@ -15,9 +15,11 @@ const Shop = () => {
                 <Text style={styles.cardPrice}>$6.99</Text>
                 <Button title="Order Now"
                         style={styles.cardButton}
-                        color="#5637DD"
                         buttonStyle={{
-                            backgroundColor: '#e2adf2',
+                            backgroundColor: '#e2adf2'
+                        }}
+                        titleStyle={{
+                            color:"#5637DD"
                         }}/>    
             </Card>
         </ScrollView>
