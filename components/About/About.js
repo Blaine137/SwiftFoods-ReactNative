@@ -1,34 +1,35 @@
 import React, { Component } from 'react';
 import {ScrollView, View, Text, StyleSheet} from 'react-native';
+import * as Animatable from 'react-native-animatable';
 
 const About = props => {
 
         return(
             <ScrollView>
-                <View style={styles.flexContainer}>
+                <Animatable.View animation='fadeInRight' duration={2000} delay={500} style={styles.flexContainer}>
                     <View style={styles.flexOne}>
                         <Text style={styles.header}>Our Mission</Text>
                     </View>
                     <View style={styles.flexTwo}>
                         <Text style={styles.text}>We strive to keep our customers fed with little to no effort. if you are not satisfied with out product, we will refund your money!</Text>
                     </View>
-                </View>
-                <View style={styles.flexContainer}>
+                </Animatable.View>
+                <Animatable.View animation='fadeInLeft' duration={2000} delay={500} style={styles.flexContainer}>
                     <View style={styles.flexTwo}>
                         <Text style={styles.text}>Here at Swift Foods, we provide the highest quality food. Our food contains less sugar, less processes, and more nutrients that is ready in three minutes!</Text>
                     </View>
                     <View style={styles.flexOne}>
                         <Text style={styles.header}>Our Food</Text>
                     </View>
-                </View>
-                <View style={styles.flexContainer}>
+                </Animatable.View>
+                <Animatable.View animation='fadeInRight' duration={2000} delay={500} style={styles.flexContainer}>
                     <View style={styles.flexOne}>
                         <Text style={styles.header}>Why Swift Foods?</Text>
                     </View>
                     <View style={styles.flexTwo}>
                         <Text style={styles.text}>When it comes time to eat, you have many options. Foods offer convenience, nutrion, and cravings. At Swift Foods, we offer all three for a price you cannot beat!</Text>
                     </View>
-                </View>
+                </Animatable.View>
             </ScrollView>
         );
 

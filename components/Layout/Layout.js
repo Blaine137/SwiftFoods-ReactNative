@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Home from '../Home/Home';
 import About from '../About/About';
+import Shop from '../Shop/Shop';
 import { View, Platform, StyleSheet, Text, ScrollView, Image } from 'react-native';
 import { createStackNavigator, createDrawerNavigator, DrawerItems } from 'react-navigation';
 import { Icon } from 'react-native-elements';
@@ -21,7 +22,12 @@ const HomeNavigator = createStackNavigator(
             headerTintColor: '#fff',
             headerTitleStyle: {
                 color: '#fff'
-            }
+            },
+            headerLeft: <Icon
+                            name='home'
+                            type='font-awesome'
+                            onPress={() => navigation.toggleDrawer()}
+                            iconStyle={styles.stackIcon}/>
         })
     }
 );
@@ -38,7 +44,35 @@ const AboutNavigator = createStackNavigator(
             headerTintColor: '#fff',
             headerTitleStyle: {
                 color: '#fff'
-            }
+            },
+            headerLeft: <Icon
+                            name='info'
+                            type='font-awesome'
+                            onPress={() => navigation.toggleDrawer()}
+                            iconStyle={styles.stackIcon}/>
+        })
+    }
+);
+
+const ShopNavigator = createStackNavigator(
+    {
+        Shop: { screen: Shop }
+    },
+    {
+        navigationOptions: ({navigation}) => ({
+            title: 'Shop',
+            headerStyle: {
+                backgroundColor: '#222A68'
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+                color: '#fff'
+            },
+            headerLeft: <Icon
+                            name='shopping-cart'
+                            type='font-awesome'
+                            onPress={() => navigation.toggleDrawer()}
+                            iconStyle={styles.stackIcon}/>
         })
     }
 );
@@ -55,7 +89,12 @@ const SubscribeNavigator = createStackNavigator(
             headerTintColor: '#fff',
             headerTitleStyle: {
                 color: '#fff'
-            }
+            },
+            headerLeft: <Icon
+                            name='address-card'
+                            type='font-awesome'
+                            onPress={() => navigation.toggleDrawer()}
+                            iconStyle={styles.stackIcon}/>
         })
     }
 );
@@ -84,11 +123,14 @@ const MainNavigator = createDrawerNavigator(
         Home: {
           screen: HomeNavigator
         },
-        Subscribe: {
-            screen: SubscribeNavigator
-        },
         About: {
            screen: AboutNavigator
+        },
+        Shop: {
+            screen: ShopNavigator
+        },
+        Subscribe: {
+            screen: SubscribeNavigator
         }
     },
     {
@@ -139,7 +181,7 @@ const styles = StyleSheet.create({
         width: 60
     },
     stackIcon: {
-        marginLeft: 10,
+        marginLeft: 20,
         color: '#fff',
         fontSize: 24
     }

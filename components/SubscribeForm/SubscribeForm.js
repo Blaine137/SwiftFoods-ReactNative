@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {ScrollView, Text, StyleSheet, TextInput, Modal, View} from 'react-native';
-import {Button} from 'react-native-elements'
+import {Button} from 'react-native-elements';
 
 
 class SubscribeForm extends Component{
