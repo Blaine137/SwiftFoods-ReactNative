@@ -2,6 +2,7 @@ import { setLightEstimationEnabled } from 'expo/build/AR';
 import React, { useState } from 'react';
 import {ScrollView, Text, StyleSheet, TextInput, Modal, View} from 'react-native';
 import {Card, Button} from 'react-native-elements';
+import * as Animatable from 'react-native-animatable';
 
 const Shop = () => {
 
@@ -29,51 +30,57 @@ const Shop = () => {
 
         <ScrollView>
             <Text style={styles.pageHeader}>Free shipping on every order!</Text>
-            <Card
-                image={require('../images/peppizza.jpg')}>
-                <Text style={styles.cardHeader}>Pizza</Text>
-                <Text style={styles.cardText}>Italian pizza made with homemade tomato sauce, fresh american white cheese, and topped with pepperonis.</Text>
-                <Text style={styles.cardPrice}>$6.99</Text>
-                <Button title="Order Now"
-                        style={styles.cardButton}
-                        buttonStyle={{
-                            backgroundColor: '#e2adf2'
-                        }}
-                        titleStyle={{
-                            color:"#5637DD"
-                        }}
-                        onPress={() => {toggleOrderModal(!showOrderModal)}}/>    
-            </Card>
-            <Card
-                image={require('../images/salad.jpg')}>
-                <Text style={styles.cardHeader}>Salad</Text>
-                <Text style={styles.cardText}>Freshly cut lettuce topped with home grown tomatos, garden fresh carrots, and our signature ranch dressing.</Text>
-                <Text style={styles.cardPrice}>$4.99</Text>
-                <Button title="Order Now"
-                        style={styles.cardButton}
-                        buttonStyle={{
-                            backgroundColor: '#e2adf2'
-                        }}
-                        titleStyle={{
-                            color:"#5637DD"
-                        }}
-                        onPress={() => {toggleOrderModal(!showOrderModal)}}/>    
-            </Card>
-            <Card
-                image={require('../images/burger.jpg')}>
-                <Text style={styles.cardHeader}>Burger</Text>
-                <Text style={styles.cardText}>Mouth drooling angus burger on two buns topped with fresh lettuce, tomato, ketchup, and onions.</Text>
-                <Text style={styles.cardPrice}>$8.99</Text>
-                <Button title="Order Now"
-                        style={styles.cardButton}
-                        buttonStyle={{
-                            backgroundColor: '#e2adf2'
-                        }}
-                        titleStyle={{
-                            color:"#5637DD"
-                        }}
-                        onPress={() => {toggleOrderModal(!showOrderModal)}}/>    
-            </Card>
+            <Animatable.View animation="fadeIn" duration={2000} delay={1000}>
+                <Card
+                    image={require('../images/peppizza.jpg')}>
+                    <Text style={styles.cardHeader}>Pizza</Text>
+                    <Text style={styles.cardText}>Italian pizza made with homemade tomato sauce, fresh american white cheese, and topped with pepperonis.</Text>
+                    <Text style={styles.cardPrice}>$6.99</Text>
+                    <Button title="Order Now"
+                            style={styles.cardButton}
+                            buttonStyle={{
+                                backgroundColor: '#e2adf2'
+                            }}
+                            titleStyle={{
+                                color:"#5637DD"
+                            }}
+                            onPress={() => {toggleOrderModal(!showOrderModal)}}/>    
+                </Card>
+            </Animatable.View>
+            <Animatable.View animation="fadeIn" duration={2000} delay={1000}>
+                <Card
+                    image={require('../images/salad.jpg')}>
+                    <Text style={styles.cardHeader}>Salad</Text>
+                    <Text style={styles.cardText}>Freshly cut lettuce topped with home grown tomatos, garden fresh carrots, and our signature ranch dressing.</Text>
+                    <Text style={styles.cardPrice}>$4.99</Text>
+                    <Button title="Order Now"
+                            style={styles.cardButton}
+                            buttonStyle={{
+                                backgroundColor: '#e2adf2'
+                            }}
+                            titleStyle={{
+                                color:"#5637DD"
+                            }}
+                            onPress={() => {toggleOrderModal(!showOrderModal)}}/>    
+                </Card>
+            </Animatable.View>
+            <Animatable.View animation="fadeIn" duration={2000} delay={1000}>
+                <Card
+                    image={require('../images/burger.jpg')}>
+                    <Text style={styles.cardHeader}>Burger</Text>
+                    <Text style={styles.cardText}>Mouth drooling angus burger on two buns topped with fresh lettuce, tomato, ketchup, and onions.</Text>
+                    <Text style={styles.cardPrice}>$8.99</Text>
+                    <Button title="Order Now"
+                            style={styles.cardButton}
+                            buttonStyle={{
+                                backgroundColor: '#e2adf2'
+                            }}
+                            titleStyle={{
+                                color:"#5637DD"
+                            }}
+                            onPress={() => {toggleOrderModal(!showOrderModal)}}/>    
+                </Card>
+            </Animatable.View>
             <Modal
                 style={styles.modal} 
                 visible={showOrderModal}
