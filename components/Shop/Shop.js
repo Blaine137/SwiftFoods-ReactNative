@@ -191,7 +191,7 @@ const Shop = () => {
                                 backgroundColor: '#574AE2'
                             }}/>
                             <Text style={styles.modalText}>Hello {fName} {lName}, Your order will will arrive to {address} {city}, {state} {zip} shortly. We have emailed you a link to track your package at {email}. Thank you for shopping with Swift Foods!</Text>
-                            <Text>Your order: {pizzas} pizzas, {salads} Salads, {burgers} burgers</Text>
+                            <Text style={styles.modalText}>Your order: {pizzas} pizzas, {salads} Salads, {burgers} burgers</Text>
                         </View>
                     </Modal>
         </ScrollView>
