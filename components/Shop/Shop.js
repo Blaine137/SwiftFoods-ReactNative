@@ -11,7 +11,19 @@ const Shop = () => {
 
     const [fName, setFName] = useState('');
     const [lName, setLName] = useState('');
-    const [email, setEmail] = useState('')
+    const [email, setEmail] = useState('');
+    const [address, setAddress] = useState('');
+    const [city, setCity] = useState('');
+    const [state, setState] = useState('');
+    const [zip, setZip] = useState(null);
+    const [pizzas, setPizzas] = useState(0);
+    const [salads, setSalads] = useState(0);
+    const [burgers, setBurgers] = useState(0);
+    const [cardType, setCardType] = useState('');
+    const [cardNum, setCardNum] = useState(null);
+    const [cardExp, setCardExp] = useState(null);
+    const [cardSec, setCardSec] = useState(null);
+
 
     return(
 
@@ -98,47 +110,47 @@ const Shop = () => {
                         <TextInput
                         placeholder="Enter your address"
                         style={styles.input}
-                        onChangeText={value => this.setState({address: value})}/>
+                        onChangeText={value => setAddress(value)}/>
                         <TextInput
                         placeholder="Enter your city"
                         style={styles.input}
-                        onChangeText={value => this.setState({city: value})}/>
+                        onChangeText={value => setCity(value)}/>
                         <TextInput
                         placeholder="Enter your state"
                         style={styles.input}
-                        onChangeText={value => this.setState({state: value})}/>
+                        onChangeText={value => setState(value)}/>
                         <TextInput
                         placeholder="Enter your zipcode"
                         style={styles.input}
-                        onChangeText={value => this.setState({zipcode: value})}/>
+                        onChangeText={value => setZip(value)}/>
                         <TextInput
                         placeholder="Enter how many pizzas"
                         style={styles.input}
-                        onChangeText={value => this.setState({months: value})}/>
+                        onChangeText={value => setPizzas(value)}/>
                         <TextInput
                         placeholder="Enter how many salads"
                         style={styles.input}
-                        onChangeText={value => this.setState({months: value})}/>
+                        onChangeText={value => setSalads(value)}/>
                         <TextInput
                         placeholder="Enter how many burgers"
                         style={styles.input}
-                        onChangeText={value => this.setState({months: value})}/>
+                        onChangeText={value => setBurgers(value)}/>
                         <TextInput
                         placeholder="Enter your card type"
                         style={styles.input}
-                        onChangeText={value => this.setState({cardType: value})}/>
+                        onChangeText={value => setCardType(value)}/>
                         <TextInput
                         placeholder="Enter your card number"
                         style={styles.input}
-                        onChangeText={value => this.setState({cardNum: value})}/>
+                        onChangeText={value => setCardNum(value)}/>
                         <TextInput
                         placeholder="Enter your card's expiration date"
                         style={styles.input}
-                        onChangeText={value => this.setState({cardExp: value})}/>
+                        onChangeText={value => setCardExp(value)}/>
                         <TextInput
                         placeholder="Enter your card's security number"
                         style={styles.input}
-                        onChangeText={value => this.setState({cardSec: value})}/>
+                        onChangeText={value => setCardSec(value)}/>
                         <Button style={styles.submit} title="Submit" 
                             buttonStyle={{
                                 backgroundColor: '#E2ADF2'
@@ -171,7 +183,8 @@ const Shop = () => {
                             buttonStyle={{
                                 backgroundColor: '#574AE2'
                             }}/>
-                            <Text style={styles.modalText}>Hello {fName}</Text>
+                            <Text style={styles.modalText}>Hello {fName} {lName}, Your order will will arrive to {address} {city}, {state} {zip} shortly. We have emailed you a link to track your package at {email}. Thank you for shopping with Swift Foods!</Text>
+                            <Text>Your order: {pizzas} pizzas, {salads} Salads, {burgers} burgers</Text>
                         </View>
                     </Modal>
         </ScrollView>
