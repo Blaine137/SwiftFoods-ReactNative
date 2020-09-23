@@ -147,11 +147,33 @@ const Shop = () => {
                                 color: '#222A68'
                             }}
                             onPress={() => {
+                                toggleOrderModal(!showOrderModal)
                                 toggleThanksModal(!showThanksModal)
                             }}/>
                     </ScrollView>
                 </View>
             </Modal>
+            <Modal
+                        style={styles.modal} 
+                        visible={showThanksModal}
+                        animationType="slide"
+                        onRequestClose={() => {
+                            toggleThanksModal(!showThanksModal)
+                        }}>
+                        <View style={styles.modal}>
+                        <Button
+                            onPress={() => {
+                                toggleThanksModal(!showThanksModal)
+                            }}
+                            color='#5637DD'
+                            title='Close'
+                            style={styles.modalButton}
+                            buttonStyle={{
+                                backgroundColor: '#574AE2'
+                            }}/>
+                            <Text style={styles.modalText}>Hello {fName}</Text>
+                        </View>
+                    </Modal>
         </ScrollView>
 
     );
