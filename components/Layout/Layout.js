@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Home from '../Home/Home';
 import About from '../About/About';
 import Shop from '../Shop/Shop';
+import Contact from '../Contact/Contact';
 import { View, Platform, StyleSheet, Text, ScrollView, Image } from 'react-native';
 import { createStackNavigator, createDrawerNavigator, DrawerItems } from 'react-navigation';
 import { Icon } from 'react-native-elements';
@@ -77,6 +78,29 @@ const ShopNavigator = createStackNavigator(
     }
 );
 
+const ContactNavigator = createStackNavigator(
+    {
+        Contact: { screen: Contact }
+    },
+    {
+        navigationOptions: ({navigation}) => ({
+            title: 'Contact',
+            headerStyle: {
+                backgroundColor: '#222A68'
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+                color: '#fff'
+            },
+            headerLeft: <Icon
+                            name='address-card'
+                            type='font-awesome'
+                            onPress={() => navigation.toggleDrawer()}
+                            iconStyle={styles.stackIcon}/>
+        })
+    }
+);
+
 const SubscribeNavigator = createStackNavigator(
     {
         Subscribe: { screen: SubscribeForm }
@@ -128,6 +152,9 @@ const MainNavigator = createDrawerNavigator(
         },
         Shop: {
             screen: ShopNavigator
+        },
+        Contact: {
+            screen: ContactNavigator
         },
         Subscribe: {
             screen: SubscribeNavigator
