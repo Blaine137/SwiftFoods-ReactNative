@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput, StyleSheet  } from 'react-native';
+import { View, TextInput, StyleSheet, Text, Modal  } from 'react-native';
 import { Button } from 'react-native-elements';
 
 const Contact = () => {
@@ -12,9 +12,9 @@ const Contact = () => {
 
     return(
         <View>
-            <TextInput style={styles.input} placeholder="Enter your name" onChangeText={() => setName()}/>
-            <TextInput style={styles.input} placeholder="Enter your email" onChangeText={() => setEmail()}/>
-            <TextInput style={styles.comments} placeholder="Enter your feedback" onChangeText={() => setComments()}/>
+            <TextInput style={styles.input} placeholder="Enter your name" onChangeText={value => setName(value)}/>
+            <TextInput style={styles.input} placeholder="Enter your email" onChangeText={value => setEmail(value)}/>
+            <TextInput style={styles.comments} placeholder="Enter your feedback" onChangeText={value => setComments(value)}/>
             <Button style={styles.submit} title="Submit" 
                     buttonStyle={{
                         backgroundColor: '#E2ADF2'
@@ -23,8 +23,29 @@ const Contact = () => {
                         color: '#222A68'
                     }}
                     onPress={() => {
-                        setShowModal()
+                        setShowModal(!showModal)
                     }}/>
+            <Modal
+                style={styles.modal} 
+                visible={showModal}
+                animationType="slide"
+                onRequestClose={() => {
+                    setShowModal(!showModal)
+                }}>
+                <View style={styles.modal}>
+                <Button
+                    onPress={() => {
+                        setShowModal(!showModal)
+                    }}
+                    color='#5637DD'
+                    title='Close'
+                    style={styles.modalButton}
+                    buttonStyle={{
+                        backgroundColor: '#574AE2'
+                    }}/>
+                    <Text style={styles.modalText}>Hello {name}, Thank you for contacting us. your feedback will be reviewed shortly, and you will recieve an response at {email} within the next 24 hours.</Text>
+                </View>
+            </Modal>
         </View>
     );
 
@@ -60,6 +81,17 @@ const styles = StyleSheet.create({
         height: 50,
         marginLeft: 'auto',
         marginRight: 'auto'
+    },
+    modal: { 
+        justifyContent: 'center',
+        margin: 20
+    },
+    modalButton: {
+        marginTop: 48
+    },
+    modalText: {
+        fontSize: 24,
+        marginTop: 48
     }
 });
 
