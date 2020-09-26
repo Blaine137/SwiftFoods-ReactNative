@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, TextInput, StyleSheet, Text, Modal  } from 'react-native';
 import { Button } from 'react-native-elements';
+import * as Animatable from 'react-native-animatable';
 
 const Contact = () => {
 
@@ -11,7 +12,7 @@ const Contact = () => {
     const [showModal, setShowModal] = useState(false);
 
     return(
-        <View>
+        <Animatable.View animation="fadeIn" duration={2000} delay={1000}>
             <TextInput style={styles.input} placeholder="Enter your name" onChangeText={value => setName(value)}/>
             <TextInput style={styles.input} placeholder="Enter your email" onChangeText={value => setEmail(value)}/>
             <TextInput style={styles.comments} placeholder="Enter your feedback" onChangeText={value => setComments(value)}/>
@@ -46,7 +47,7 @@ const Contact = () => {
                     <Text style={styles.modalText}>Hello {name}, Thank you for contacting us. your feedback will be reviewed shortly, and you will recieve an response at {email} within the next 24 hours.</Text>
                 </View>
             </Modal>
-        </View>
+        </Animatable.View>
     );
 
 };

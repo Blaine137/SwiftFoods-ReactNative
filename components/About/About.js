@@ -36,7 +36,7 @@ const About = props => {
 };
 
 About['navigationOptions'] = screenProps => ({
-    title: 'About'
+    title: 'About Us'
 });
 
 const styles = StyleSheet.create({
